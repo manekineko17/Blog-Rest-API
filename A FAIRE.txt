@@ -1,0 +1,6 @@
+changer user id mangodb
+le mettre en json
+vérifier le gitignore
+rajouter les maquettes
+
+créer un new repo sur github en public

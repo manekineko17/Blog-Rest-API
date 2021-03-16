@@ -1,0 +1,36 @@
+body,
+html {
+  display: flex;
+  height: 100%;
+}
+#container_redirect {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-family: "Source Code Pro", monospace;
+  background-color: #25283d;
+  color: white;
+}
+.redirection_link {
+  display: block;
+  width: max-content;
+  font-family: "Source Code Pro", monospace;
+  margin: auto;
+  padding: 8px 15px;
+  margin-top: 1em;
+  font-size: 15px;
+  font-weight: 900;
+  color: white;
+  background-color: transparent;
+  border: 2px solid #25283d;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.redirection_link:visited {
+  color: white;
+}
+footer {
+  width: 100%;
+}

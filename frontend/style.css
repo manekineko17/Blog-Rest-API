@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  display: flex;
+  display: -webkit-box; /*pour adapter sur tous les navigateurs*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* ///////////////////////// HEADER /////////////////////////   */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-image: url("https://images.unsplash.com/photo-1580566176138-daa588058b59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+}
+
+header > nav {
+  background-color: rgba(37, 40, 61, 1);
+  width: 100%;
+}
+
+header > nav > ul {
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+nav > ul > li {
+  color: #ffffff;
+  font-size: 0.8em;
+  font-family: "Source Code Pro", monospace;
+  list-style-type: none;
+}
+
+a:link,
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* #cadre_titre {
+    background-color: rgba(20, 24, 59, 0.4);
+    padding: 0 2em 0 2em;
+    margin: 1em 0;
+} */
+
+h1,
+h2 {
+  font-family: "Source Code Pro", monospace;
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+/* rajout d'une deuxième div qui va faire que le header est séparé en deux et modif de la taille de la div grâce à flex-grow*/
+
+header > #part2_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1em 0;
+  flex-grow: 3; /* flew grow dit quelle quantité de place dispo dans le container cette div doit prendre. Ici elle prend 3fois plus de places que les autres  */
+}
+
+/* ///////////////////////// CORPS ///////////////////////// */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  background-color: rgba(37, 40, 61, 1);
+  align-items: center;
+  font-family: "Source Code Pro", monospace;
+  color: #25283d;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  background-color: #eb8258;
+  padding: 1em;
+}
+
+.subject_article {
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+.background_data {
+  font-family: "Roboto";
+  background-color: rgb(255, 255, 255, 50%);
+  line-height: 2em;
+}
+
+.voir,
+.back,
+#boutonPubliez {
+  font-family: "Source Code Pro", monospace;
+  display: block;
+  margin: auto;
+  padding: 8px 15px;
+  margin-top: 1em;
+  font-size: 15px;
+  font-weight: 900;
+  color: #25283d;
+  background-color: #ffffff;
+  border: 2px solid #25283d;
+  cursor: pointer;
+  width: max-content;
+  transition: 0.25s ease;
+}
+
+.voir:hover,
+.back:hover,
+#boutonPubliez {
+  border-style: dashed;
+}
+
+/* ///////////////////////// FOOTER  /////////////////////////  */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #495057;
+  height: 4em;
+}
+
+#bloc_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.img_logo_github {
+  height: 3em;
+  width: 3em;
+}
+
+/* On ne veut pas que les noms apparaissent sur la version mobile */
+.name {
+  display: none;
+}
+
+/* ///////////////////////// RESPONSIVE  /////////////////////////  */
+
+/*tablet :on screens that are min 376px, set the followings*/
+@media screen and (min-width: 834px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+    /* margin: 0em 4em 4em; */
+  }
+}
+
+/*desktop: on screens that are 1094px or more, set the followings */
+@media screen and (min-width: 1094px) {
+  h1 {
+    font-size: 3em;
+  }
+  header > nav {
+    height: 30%;
+  }
+  nav > ul > li {
+    font-size: 1em;
+    margin: 0.5em 0em 0 0.5em;
+  }
+
+  #part2_header {
+    padding: 2em 0;
+  }
+
+  footer {
+    background-color: #25283d;
+  }
+
+  /* On veut que les noms apparraissent sur la version Desktop  */
+  #bloc_logo {
+    width: 80%;
+  }
+
+  .collab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25%;
+  }
+  .name {
+    display: flex;
+    flex-direction: row;
+    font-family: "Source Code Pro", monospace;
+    /* letter-spacing: 0.3em; */
+    margin-left: 1em;
+  }
+  #mereani {
+    color: #a100f2;
+  }
+  #aurelie {
+    color: #eb8258;
+  }
+  #marine {
+    color: #4fb0c6;
+  }
+  #adele {
+    color: #f6f740;
+  }
+}
+
+.article {
+  margin: 2em 0 2em 0;
+  width: 22em;
+}
+
+.img_article {
+  width: 60%;
+}
