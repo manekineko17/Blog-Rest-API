@@ -1,7 +1,7 @@
 // j'appelle express et mongoose et body parser ! 
 const bodyParser = require('body-parser'); //body parser pour mettre les données dans le bon format pour la bdd
 const mongoose = require('mongoose'); //mongoose pour communiquer avec la bdd
-// je fais en sorte qu'express utilise sa méthode de router et je fais en sorte que app l'utilise !
+// je fais en sorte qu'express utilise sa méthode de router et je fais en sorte que app l'utilise
 const express = require('express');
 // Je crée une variable qui va permettre d'executer express (créer une appli express)
 const app = express();
@@ -61,7 +61,7 @@ router.post('/articles', (req, res) => {
   article.content = req.body.content;
   try{
     article.save(); // ON SAUVEGARDE DANS LA BASE DE DONNEES 
-    res.redirect("redirect.html" ) //après la publication de l'article, mis à jour de la bdd et renvoi ver l'url accueil
+    res.redirect("redirect.html" ) //après la publication de l'article, mise à jour de la bdd et renvoi vers l'url accueil
   }catch(err){
     res.status(400).json({ message: 'Erreur d\'enregistrement'})
   }
@@ -110,4 +110,4 @@ app.listen(3000, function(){
 
 // Une application Express est une série de fonctions appelées middleware. Chaque élément de middleware
 // reçoit les objets request et response, peut les lire, les analyser et les manipuler. Le middleware Express
-// reçoit ausssi la méthode next qui permet à chaque middleware de passer l'exécution au middleware suivant. 
+// reçoit aussi la méthode next qui permet à chaque middleware de passer l'exécution au middleware suivant. 
